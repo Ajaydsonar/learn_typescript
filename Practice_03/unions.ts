@@ -18,13 +18,19 @@ let Ajay: User | Admin = {
 
 Ajay = { userName: "Ajay Dhanraj Sonar", id: 24 };
 
-function getID(id: number | string) {
+function getID(id: number | string | boolean) {
   if (typeof id === "string") {
     console.log(id.toUpperCase());
+  } else if (typeof id === "boolean") {
+    console.log("it's boolean");
   } else {
     console.log(id);
   }
 }
+
+// Question 3
+
+getID(true);
 
 const data: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const data2: string[] = ["Ajay", "Dhanraj", "Sonar"];
@@ -59,9 +65,29 @@ type person =
       username: string;
     };
 
-let userInfo: person = { name: "Ajay", age: 22 } ;
+let userInfo: person = { name: "Ajay", age: 22 };
 let userInfo2: person = { username: "XXXX" };
-console.log(userInfo);
-console.log(userInfo2);
+// console.log(userInfo);
+// console.log(userInfo2);
+
+let mixedArr: (number | string | [boolean, string])[] = [];
+
+mixedArr = [1, 2, 3, 4, 5];
+console.log("only number  : " + mixedArr);
+
+mixedArr = ["Ajay", "Dhanraj", "Sonar"];
+console.log("only string: " + mixedArr);
+
+mixedArr = [
+  [true, "Ajay"],
+  [false, "wrong"],
+];
+console.log("only string : " + mixedArr[0]);
+
+// literal types Question
+
+let dayOfWeek: "Monday" | "Tuesday" | "Wednesday";
+
+dayOfWeek = "Tuesday";
 
 export {};

@@ -1,4 +1,4 @@
-enum SeatChoice {
+const enum SeatChoice {
   AISLE = "10", //we can change the value
   MIDDLE = 12,
   WINDOW,

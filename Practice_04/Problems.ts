@@ -167,3 +167,24 @@ class Cars implements vehicless {
 
 const car3 = new Cars("Ajay", 21);
 console.log(car3);
+
+interface Todo {
+  id: number;
+  title: string;
+  isCompleted: boolean;
+}
+
+function printTodo(todos: Todo[]): void {
+  todos.forEach((todo) =>
+    console.log(
+      `id : ${todo.id} \n title: ${todo.title} \n isCompleted : ${todo.isCompleted}`
+    )
+  );
+}
+
+let myTodos: Array<Todo> = [
+  { id: 123, title: "clean the room", isCompleted: false },
+  { id: 1234, title: "Wash the room", isCompleted: true },
+];
+
+printTodo(myTodos);
